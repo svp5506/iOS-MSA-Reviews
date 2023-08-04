@@ -17,7 +17,7 @@ MSA_iOS = AppStore(
     # proxies=proxies  # Pass the proxies parameter
 )
 
-MSA_iOS.review(after=datetime.datetime(2023, 7, 31), sleep=1)
+MSA_iOS.review(after=datetime.datetime(2023, 1, 1), sleep=1)
 
 MSA_iOSdf = pd.DataFrame(np.array(MSA_iOS.reviews), columns=['review'])
 MSA_iOSdf2 = MSA_iOSdf.join(pd.DataFrame(MSA_iOSdf.pop('review').tolist()))
@@ -40,4 +40,5 @@ combined.rename(
 combinedReorder = combined.iloc[:, [3, 0, 2, 1, 4, 9, 6, 7, 8, 10, 5]]
 
 combinedFinal = combinedReorder.drop(columns=["developerResponse", "index"])
-combinedFinal.to_csv('MSA_iOS_Reviews_New_2.csv')
+combinedFinal.to_csv('MSA_iOS_Reviews_New_3.csv')
+
